@@ -7,8 +7,9 @@ exports.run = {
    }) => {
       try { 
          if (body && !global.evaluate_chars.some(v => body.startsWith(v))) {
-            let json = await scrap.chatAI(process.env.BRAIN_API_ID, process.env.BRAIN_API_SECRET, body)
-            if (!m.fromMe && setting.chatbot && json.status) return client.reply(m.chat, json.msg, null)
+            let json = await Api.chatbot(body)
+            if (!m.fromMe && setting.chatbot )
+               m.reply(`${json.data.data}`)
          }
       } catch (e) {
          console.log(e)
