@@ -18,7 +18,7 @@ exports.run = {
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
             let textt = "*XNXX Search*\n\n Result From " + text + "\n\n⚡ To download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
             json.result.map(async (v, i) => {
-           textt += `⚡ No : ${no++}\n ❤Title : ${v.title}\n🙈Views : ${
+           textt += `❤Title : ${v.title}\n🙈Views : ${
           v.views
         }\n👑Quality : ${v.quality}\n⌛Duration : ${
           v.duration
