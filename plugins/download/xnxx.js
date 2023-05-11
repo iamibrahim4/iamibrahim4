@@ -16,7 +16,7 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.adus(text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
-            let textt = "*XNXX Search*\n\n Result From " + text + "\n\n⚡ To download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
+            let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
             json.result.map(async (v, i) => {
            textt += `❤Title : ${v.title}\n🙈Views : ${
           v.views
