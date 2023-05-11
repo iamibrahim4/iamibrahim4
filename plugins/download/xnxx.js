@@ -31,7 +31,7 @@ exports.run = {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan)  
+            let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan`)  
             if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
             let teks = 乂  *N S F W*\n\n
             teks += '  ◦  *Name* : ' + json.result.title + '\n'
