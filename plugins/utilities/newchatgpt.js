@@ -1,7 +1,7 @@
 exports.run = {
     usage: ['ai'],
     use: 'query',
-    category: 'utilities',
+    category: 'ai',
     async: async (m, {
       client,
       text,
