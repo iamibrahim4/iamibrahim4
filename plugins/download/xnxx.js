@@ -22,7 +22,7 @@ exports.run = {
           v.views
         }\n👑Quality : ${v.quality}\n⌛Duration : ${
           v.duration
-        }\⚡Link : ${
+        }\n⚡Link : ${
           v.link
         }\n\n──────────────\n\n`;
             })
