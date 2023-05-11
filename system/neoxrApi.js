@@ -248,4 +248,8 @@ module.exports = class NeoxrApi {
       let json = await Func.fetchJson(this.baseUrl + '/diffusion?q=' + query + '&apikey=' + this.apiKey)
       return json
    }
+   adus = async (query) => {
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxx?query=${query}&apikey=tamvan`)
+      return json
+   }
 }
