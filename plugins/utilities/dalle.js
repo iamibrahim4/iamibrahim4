@@ -1,7 +1,7 @@
 exports.run = {
   usage: ['dalle'],
   use: 'query',
-  category: 'utilities',
+  category: 'ai',
   async: async (m, {
     client,
     text,
