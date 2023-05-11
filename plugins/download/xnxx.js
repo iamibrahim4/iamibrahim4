@@ -14,7 +14,7 @@ exports.run = {
   client.sendReact(m.chat, "🕒", m.key);
   if (args[0].startsWith("http")) {
    const { status, result } = await Func.fetchJson(
-    https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan
+   `https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan`
    );
    if (!status) {
     return client.reply(m.chat, global.status.fail, m);
