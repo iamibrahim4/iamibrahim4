@@ -22,9 +22,9 @@ exports.run = {
           v.views
         }\n👑Quality : ${v.quality}\n⌛Duration : ${
           v.duration
-        }\n⚡Link : `${
+        }\n⚡Link : ${
           v.link
-        }`\n\n──────────────\n\n`;
+        }\n\n──────────────\n\n`;
             })
            client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
          } else if (command == 'getxnxx') {
