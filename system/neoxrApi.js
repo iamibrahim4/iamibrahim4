@@ -248,8 +248,58 @@ module.exports = class NeoxrApi {
       let json = await Func.fetchJson(this.baseUrl + '/diffusion?q=' + query + '&apikey=' + this.apiKey)
       return json
    }
-   adus = async (query) => {
+       adus = async (query) => {
       let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxx?query=${query}&apikey=tamvan`)
       return json
    }
+    aaas = async (query) => {
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xvideossearch?query=${query}&apikey=tamvan`)
+      return json
+   }
+    openi = async (query) => {
+      let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/openai?apikey=BrunoSobrino&text=${query}&user=user-unique-id`)
+      return json
+   }
+    chatgpt = async (query) => {
+      let json = await Func.fetchJson(`https://api.itsrose.site/chatGPT/completions?prompt=${query}&apikey=e3f7c48414c36ab74bbc192f`)
+      return json
+   }
+   moapk = async (query) => {
+      let json = await Func.fetchJson(`https://api.akuari.my.id/search/searchmod?query=${query}`)
+      return json
+   }
+    dlapk = async (query) => {
+      let json = await Func.fetchJson(`https://api.akuari.my.id/search/searchapk2?query=${query}`)
+      return json
+   }
+     snak = async (link) => {
+      let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/snackvideo?apikey=BrunoSobrino&url=${link}`)
+      return json
+   }
+    ssopt = async (query) => {
+      let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=BrunoSobrino&query=${query}`)
+      return json
+   }
+    rexdl = async (query) => {
+      let json = await Func.fetchJson(this.baseUrl + '/rexdl?q=' + query + '&apikey=' + this.apiKey)
+      return json
+   }
+    ddrexdl = async (text) => {
+      let json = await Func.fetchJson(this.baseUrl + '/rexdl-get?url=' + text + '&apikey=' + this.apiKey)
+      return json
+   }
+    difdif = async (text) => {
+      let json = Func.fetchBuffer(`https://api.itsrose.site/image/diffusion?prompt=${text}&negative_prompt=(worst%20quality%2C%20low%20quality%2C%20extra%20hand)%2C%20monochrome&ratio=1%3A1&seed=-1&style=ACG&sampler=Euler&cfg=4.0&controlNet=none&apikey=e3f7c48414c36ab74bbc192f`)
+      return json
+   }
+    playstore = async (text) => {
+      let json = Func.fetchBuffer(`https://api.lolhuman.xyz/api/playstore?apikey=BrunoSobrino&query=${text}`)
+      return json
+   }
+   chatbot = async (query) => {
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/gpt3?text=${query}&apikey=tamvan`)
+      return json
+     }
+  }
+
 }
