@@ -33,12 +33,12 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan`)  
             if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
-            let teks = 乂  *N S F W*\n\n
-            teks += '  ◦  *Name* : ' + json.result.title + '\n'
-            teks += '  ◦  *Duratiom* : ' + json.result.duration + '\n'
-            teks += '  ◦  *Quality* : ' + json.result.quality + '\n'
-            teks += '  ◦  *Keywords* : ' + json.result.keyword + '\n'
-            teks += '  ◦  *views* : ' + json.result.views + '\n\n'
+            let teks = `乂  *N S F W*\n\n`
+            teks += '	◦  *Name* : ' + json.result.title + '\n'
+            teks += '	◦  *Duratiom* : ' + json.result.duration + '\n'
+            teks += '	◦  *Quality* : ' + json.result.quality + '\n'
+            teks += '	◦  *Keywords* : ' + json.result.keyword + '\n'
+            teks += '	◦  *views* : ' + json.result.views + '\n\n'
             teks += global.footer
             client.sendFile(m.chat, json.result.thumb, '', teks, m).then(() => {
                client.sendFile(m.chat, json.result.url, '', json.result.title, m)
