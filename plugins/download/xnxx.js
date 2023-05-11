@@ -16,16 +16,17 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.adus(text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
+            let textt = "*XNXX Search*\n\n Result From " + text + "\n\n───────────────────\n";
             json.result.map(async (v, i) => {
-           let teks = `⚡ To download type ${isPrefix}getxnxx your link \n Title : ${v.title}\n♫ Views : ${
+           textt += `⚡ To download type ${isPrefix}getxnxx your link \n Title : ${v.title}\n♫ Views : ${
           v.views
         }\nQuality : ${v.quality}\nDuration : ${
           i.duration
         }\Link : ${
           v.link
         }\n\n──────────────\n\n`;
-            }
-           client.sendFile(m.chat, json.result[0].thumb, '', teks, m)
+            })
+           client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
