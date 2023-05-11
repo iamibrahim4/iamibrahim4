@@ -302,4 +302,4 @@ module.exports = class NeoxrApi {
      }
   }
 
-}
+
