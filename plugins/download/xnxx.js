@@ -14,17 +14,19 @@ exports.run = {
          if (command == 'xnxx') {
            if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'step mom'), m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Api.adus(text)
+            let json = await Func.fetchJson(`https://api-xcoders.site/api/search/xnxx?query=${text}&apikey=Frieren`) 
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
             for (let i = 0; i < 18; i++) {
             var rand = Math.floor(json.result.length * Math.random())
             let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
            textt += `❤️Title : ${json.result[rand].title}\n🙈Views : ${
-          json.result[rand].title
-        }\n👑Quality : ${json.result[rand].title}\n⌛️Duration : ${
-          json.result[rand].title
+          json.result[rand].viewers
+        }\n👑Quality : ${json.result[rand].quality}\n⌛️Duration : ${
+          json.result[rand].duration
+        }\n⚡️Liked ratio : ${
+          json.result[rand].rate
         }\n⚡️Link : ${
-          json.result[rand].title
+          json.result[rand].url
         }\n\n──────────────\n\n`;
             }
            client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
