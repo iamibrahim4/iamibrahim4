@@ -19,11 +19,6 @@ exports.run = {
          let member = participants.find(u => u.id == jid)
          if (!member) return client.reply(m.chat, Func.texted('bold', `🚩 @${number} already left or does not exist in this group.`), m)
          client.groupParticipantsUpdate(m.chat, [jid], 'remove').then(res => m.reply(Func.jsonFormat(res)))
-      } else if (command == 'add') {
-         // if (!isOwner) return client.reply(m.chat, global.status.owner, m)
-         let member = participants.find(u => u.id == jid)
-         if (member) return client.reply(m.chat, Func.texted('bold', `🚩 @${number} already in this group.`), m)
-         client.groupParticipantsUpdate(m.chat, [jid], 'add').then(res => m.reply(Func.jsonFormat(res)))
       } else if (command == 'demote') {
          let member = participants.find(u => u.id == jid)
          if (!member) return client.reply(m.chat, Func.texted('bold', `🚩 @${number} already left or does not exist in this group.`), m)
