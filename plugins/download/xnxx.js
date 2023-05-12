@@ -16,14 +16,15 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.adus(text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
+            for (let i = 0; i < 18; i++) {
+            var rand = Math.floor(json.result.length * Math.random())
             let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
-            json.result.map(async (v, i) => {
-           textt += `❤️Title : ${v.title}\n🙈Views : ${
-          v.views
-        }\n👑Quality : ${v.quality}\n⌛️Duration : ${
-          v.duration
+           textt += `❤️Title : ${json.result[rand].title}\n🙈Views : ${
+          json.result[rand].title
+        }\n👑Quality : ${json.result[rand].title}\n⌛️Duration : ${
+          json.result[rand].title
         }\n⚡️Link : ${
-          v.link
+          json.result[rand].title
         }\n\n──────────────\n\n`;
             })
            client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
