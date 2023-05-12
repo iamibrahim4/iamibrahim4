@@ -28,8 +28,7 @@ exports.run = {
           v.url
         }\n\n──────────────\n\n`;
             })
-			}
-           client.sendFile(m.chat, json.result[0].thumbnailthumbnail, '', textt, m)
+		client.sendFile(m.chat, json.result[0].thumbnail, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
