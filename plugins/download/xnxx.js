@@ -14,21 +14,22 @@ exports.run = {
          if (command == 'xnxx') {
            if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'step mom'), m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(`https://api-xcoders.site/api/search/xnxx?query=${text}&apikey=Frieren`) 
+            let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxx?query=${text}&apikey=tamvan`) 
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
+		 for (let i = 0; i < 5; i++) 
+	var rand  = Math.floor(json.result.length * Math.random())
           let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
            json.result.map(async (v, i) => {
-               textt += `❤️Title : ${v.title}\n🙈Views : ${
-          v.viewers
-        }\n👑Quality : ${v.quality}\n⌛️Duration : ${
-          v.duration
-        }\n⚡️Liked ratio : ${
-          v.rate
+               textt += `❤️Title : ${v[rand].title}\n🙈Views : ${
+          v[rand].views
+        }\n👑Quality : ${v[rand].quality}\n⌛️Duration : ${
+          v[rand].duration
         }\n⚡️Link : ${
-          v.url
+          v[rand].link
         }\n\n──────────────\n\n`;
             })
-		client.sendFile(m.chat, json.result[0].thumbnail, '', textt, m)
+	 }
+		client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
