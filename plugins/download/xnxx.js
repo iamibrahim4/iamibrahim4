@@ -16,13 +16,11 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Func.fetchJson(`https://api-xcoders.site/api/search/xnxx?query=${text}&apikey=Frieren`) 
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
-            for (let i = 0; i < 18; i++) {
-            var rand = Math.floor(json.result.length * Math.random())
-            let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
+          let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
            json.result.map(async (v, i) => {
-               textt += `❤️Title : ${v[rand].title}\n🙈Views : ${
+               textt += `❤️Title : ${v.title}\n🙈Views : ${
           v.viewers
-        }\n👑Quality : ${v[rand].quality}\n⌛️Duration : ${
+        }\n👑Quality : ${v.quality}\n⌛️Duration : ${
           v.duration
         }\n⚡️Liked ratio : ${
           v.rate
