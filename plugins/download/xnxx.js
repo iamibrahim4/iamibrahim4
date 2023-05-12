@@ -19,16 +19,17 @@ exports.run = {
             for (let i = 0; i < 18; i++) {
             var rand = Math.floor(json.result.length * Math.random())
             let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
-           textt += `❤️Title : ${json.result[rand].title}\n🙈Views : ${
-          json.result[rand].viewers
-        }\n👑Quality : ${json.result[rand].quality}\n⌛️Duration : ${
-          json.result[rand].duration
+           json.result.map(async (v, i) => {
+               textt += `❤️Title : ${v[rand].title}\n🙈Views : ${
+          v.viewers
+        }\n👑Quality : ${v[rand].quality}\n⌛️Duration : ${
+          v.duration
         }\n⚡️Liked ratio : ${
-          json.result[rand].rate
+          v.rate
         }\n⚡️Link : ${
-          json.result[rand].url
+          v.url
         }\n\n──────────────\n\n`;
-            }
+            }})
            client.sendFile(m.chat, json.result[0].thumbnailthumbnail, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
