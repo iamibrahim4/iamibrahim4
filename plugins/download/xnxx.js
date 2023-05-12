@@ -16,16 +16,14 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxx?query=${text}&apikey=tamvan`) 
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
-		 for (let i = 0; i < 5; i++) 
-	var rand  = Math.floor(json.result.length * Math.random())
-          let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
-           json.result.map(async (v, i) => {
-               textt += `❤️Title : ${v[rand].title}\n🙈Views : ${
-          v[rand].views
-        }\n👑Quality : ${v[rand].quality}\n⌛️Duration : ${
-          v[rand].duration
+	   const resp = json.result.slice(0, 18); 
+  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
+          textt += `❤️Title : ${resp.title}\n🙈Views : ${
+          resp.views
+        }\n👑Quality : ${resp.quality}\n⌛️Duration : ${
+          resp.duration
         }\n⚡️Link : ${
-          v[rand].link
+          resp.link
         }\n\n──────────────\n\n`;
             })
 	 }
