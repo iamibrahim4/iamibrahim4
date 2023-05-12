@@ -26,7 +26,7 @@ exports.run = {
         }\n⚡️Link : ${
           json.result[rand].title
         }\n\n──────────────\n\n`;
-            })
+            }
            client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
