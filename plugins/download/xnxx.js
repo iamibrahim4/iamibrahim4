@@ -16,13 +16,14 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.adus(text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
-	   const resp = json.result.slice(0, 18); 
-  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
-          textt += `❤️Title : ${resp.title}\n⌛️Duration : ${
-          resp.duration
+	  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type ${isPrefix}getxnxx your link\n\n───────────────────\n";
+            json.result.map(async (v, i) => {
+		 textt += `❤️Title : ${v.title}\n⌛️Duration : ${
+          v.duration
         }\n⚡️Link : ${
-          resp.url
+          v.url
         }\n\n──────────────\n\n`;
+	   })
             
 	 
 		client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
