@@ -33,16 +33,15 @@ exports.run = {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=tamvan`)  
+            let json = await Func.fetchJson(`https://api-xcoders.site/api/download/xnxx?url=${args[0]}=Frieren`)  
             if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
             let teks = `乂  *N S F W*\n\n`
             teks += '	◦  *Name* : ' + json.result.title + '\n'
             teks += '	◦  *Duratiom* : ' + json.result.duration + '\n'
-            teks += '	◦  *Quality* : ' + json.result.quality + '\n'
             teks += '	◦  *Keywords* : ' + json.result.keyword + '\n'
-            teks += '	◦  *views* : ' + json.result.views + '\n\n'
+            teks += '	◦  *views* : ' + json.result.viewers + '\n\n'
             teks += global.footer
-            client.sendFile(m.chat, json.result.thumb, '', teks, m).then(() => {
+            client.sendFile(m.chat, json.result.thumbnail, '', teks, m).then(() => {
                client.sendFile(m.chat, json.result.url, '', json.result.title, m)
            })
          }
