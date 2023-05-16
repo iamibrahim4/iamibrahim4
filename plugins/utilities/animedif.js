@@ -16,7 +16,7 @@ exports.run = {
         client.sendMessageModify(m.chat, caption, m, {
             ads: false,
             largeThumb: false,
-            thumbnail: await Func.fetchBuffer(json.result.images)
+            thumbnail: json.result.images
          })
      } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)
