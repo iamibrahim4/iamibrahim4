@@ -32,8 +32,7 @@ exports.run = {
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Func.fetchJson(`https://api-xcoders.site/api/download/xnxx?url=${args[0]}=Frieren`)  
-            if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
-            let teks = `乂  *N S F W*\n\n`
+          let teks = `乂  *N S F W*\n\n`
             teks += '	◦  *Name* : ' + json.result.title + '\n'
             teks += '	◦  *Duratiom* : ' + json.result.duration + '\n'
             teks += '	◦  *Keywords* : ' + json.result.keyword + '\n'
