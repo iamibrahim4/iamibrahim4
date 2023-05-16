@@ -26,9 +26,19 @@ exports.run = {
           url
         }\n\n──────────────\n\n`;
 	   }
-            
+            const items1 = json.result.slice(19, 28);
+		 for (const item1 of items1) {
+  const { title, duration, url } = item1;
+		 let message = `❤️Title : ${title}\n⌛️Duration : ${
+          duration
+        }\n⚡️Link : ${
+          url
+        }\n\n──────────────\n\n`;
+	   }
 	 
-		client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
+		client.sendFile(m.chat, json.result[0].thumb, '', textt, m).then(() => {
+                m.reply(`${message}`)
+           })
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
