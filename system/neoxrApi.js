@@ -249,7 +249,7 @@ module.exports = class NeoxrApi {
       return json
    }
        adus = async (query) => {
-      let json = await Func.fetchJson(`https://api-fgmods.ddns.net/api/search/xvideosearch?text=${query}&apikey=fg-dylux`)
+      let json = await Func.fetchJson(`https://api-fgmods.ddns.net/api/search/xnxxsearch?text=${query}&apikey=fg-dylux`)
       return json
    }
     aaas = async (query) => {
