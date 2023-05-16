@@ -24,9 +24,9 @@ exports.run = {
           link
         }\n\n──────────────\n\n`;
 	   }
-            
+     let thumb = await Func.fetchBuffer(`https://telegra.ph/file/4b8fa581714a1a2e70b0c.png`)       
 	 
-		client.sendFile(m.chat, json.result[0].thumb, '', textt, m)
+		client.sendFile(m.chat, thumb, '', textt, m)
          } else if (command == 'getxnxx') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
