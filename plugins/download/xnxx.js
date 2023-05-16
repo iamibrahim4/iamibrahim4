@@ -19,9 +19,9 @@ exports.run = {
 	  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getxnxx your link\n\n───────────────────\n";
             const items = json.result.slice(0, 18);
 		 for (const item of items) {
-  const { title, title } = item;
+  const { title, link } = item;
 		 textt += `❤️Title : ${title}\n⚡️Link : ${
-          title
+          link
         }\n\n──────────────\n\n`;
 	   }
             
