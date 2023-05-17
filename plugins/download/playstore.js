@@ -43,8 +43,12 @@ exports.run = {
             teks += '	◦  *Version* : ' + json.result.apk_version + '\n'
             teks += '	◦  *Developer* : ' + json.result.apk_author + '\n'
             teks += global.footer
-            client.sendFile(m.chat, json.result.apk_icon, '', teks, m).then(() => {
-               client.sendFile(m.chat, json.result.apk_link, '.apk', json.result.apk_name, m)
+		 let thumb = await Func.fetchBuffer(`https://sh.xznsenpai.xyz/api/ssweb?type=dekstop&url=${json.result.apk_icon}`)
+		 const path = require('path');
+               const nama = `${json.result.apk_link}`;
+                const fileName = path.basename(nama);
+		 client.sendFile(m.chat, thumb, '', teks, m).then(() => {
+               client.sendFile(m.chat, json.result.apk_link, '', nama, m)
            })
          }
       } catch (e) {
