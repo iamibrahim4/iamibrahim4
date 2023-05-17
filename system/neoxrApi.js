@@ -297,7 +297,7 @@ module.exports = class NeoxrApi {
       return json
    }
    chatbot = async (query) => {
-      let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/gpt3?text=${query}&apikey=yahaa`)
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/openai?text${query}&apikey=yahaa`)
       return json
      }
   }
