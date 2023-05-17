@@ -34,9 +34,9 @@ exports.run = {
 	 
 		client.sendFile(m.chat, thumb, '', textt, m)
          } else if (command == 'getplaystore') {
-             if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your app id '), m)
+             if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'your app id '), m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/apkdownloader?apikey=BrunoSobrino&package=${args[0]}`)  
+            let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/apkdownloader?apikey=BrunoSobrino&package=${text}`)  
             if (!json.message) return client.reply(m.chat, Func.jsonFormat(json), m)
             let teks = `乂  *N S F W*\n\n`
             teks += '	◦  *Name* : ' + json.result.apk_name + '\n'
