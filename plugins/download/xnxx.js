@@ -20,11 +20,11 @@ exports.run = {
             const items = json.result.slice(0, 18);
 		 for (const item of items) {
   const { title, link, views, quality, duration } = item;
-		 textt += `❤️Title : ${title}\n♫ Views : ${
+		 textt += `❤️Title : ${title}\n🙈Views : ${
           views
-        }\nQuality : ${quality}\nDuration : ${
+        }\n👑Quality : ${quality}\n⌛️Duration : ${
           duration
-        }\Link : ${
+        }\⚡️Link : ${
           link
         }\n\n──────────────\n\n`;
 	   }
