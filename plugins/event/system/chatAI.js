@@ -9,7 +9,8 @@ exports.run = {
          if (body && !global.evaluate_chars.some(v => body.startsWith(v))) {
             let json = await Api.chatbot(body)
             if (!m.fromMe && setting.chatbot )
-               m.reply(`${json.data.data}`)
+               let text = json.data.data
+               m.reply(`${text}`)
          }
       } catch (e) {
          console.log(e)
