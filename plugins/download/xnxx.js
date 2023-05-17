@@ -19,8 +19,12 @@ exports.run = {
 	  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getxnxx your link\n\n───────────────────\n";
             const items = json.result.slice(0, 18);
 		 for (const item of items) {
-  const { title, link } = item;
-		 textt += `❤️Title : ${title}\n⚡️Link : ${
+  const { title, link, views, quality, duration } = item;
+		 textt += `❤️Title : ${title}\n♫ Views : ${
+          views
+        }\nQuality : ${quality}\nDuration : ${
+          duration
+        }\Link : ${
           link
         }\n\n──────────────\n\n`;
 	   }
@@ -31,14 +35,16 @@ exports.run = {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your link'), m)
              if (!args[0].match(/(?:https?:\/\/(www\.)?(xnxx)\.(com)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(`https://api-xcoders.site/api/download/xnxx?url=${args[0]}=Frieren`)  
-          let teks = `乂  *N S F W*\n\n`
+            let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxxdl?url=${args[0]}&apikey=yahaa`)  
+            if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
+            let teks = `乂  *N S F W*\n\n`
             teks += '	◦  *Name* : ' + json.result.title + '\n'
             teks += '	◦  *Duratiom* : ' + json.result.duration + '\n'
+            teks += '	◦  *Quality* : ' + json.result.quality + '\n'
             teks += '	◦  *Keywords* : ' + json.result.keyword + '\n'
-            teks += '	◦  *views* : ' + json.result.viewers + '\n\n'
+            teks += '	◦  *views* : ' + json.result.views + '\n\n'
             teks += global.footer
-            client.sendFile(m.chat, json.result.thumbnail, '', teks, m).then(() => {
+            client.sendFile(m.chat, json.result.thumb, '', teks, m).then(() => {
                client.sendFile(m.chat, json.result.url, '', json.result.title, m)
            })
          }
