@@ -24,7 +24,7 @@ exports.run = {
           i.url
         }\n\n──────────────\n\n`;
             })
-			client.sendFile(m.chat, json.file.url, json.file.filename, '', m)
+	m.reply(`${textt}`)
          } else if (command == 'getmodapk') {
             if (!text) return client.reply(m.chat, global.status.invalid, m)
             let [query, no] = text.split`—`
