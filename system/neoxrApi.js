@@ -300,6 +300,10 @@ module.exports = class NeoxrApi {
       let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/openai?text${query}&apikey=yahaa`)
       return json
      }
+   gppl = async (query) => {
+      let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/playstore?apikey=BrunoSobrino&query=${query}`)
+      return json
+     }
   }
 
 
