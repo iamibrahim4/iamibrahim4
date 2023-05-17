@@ -16,7 +16,7 @@ exports.run = {
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.gppl(text)
             if (!json.message) return client.reply(m.chat, global.status.fail, m)
-	  let textt = "*playstore Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getplaystore link\n\n───────────────────\n";
+	  let textt = "*playstore Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getplaystore your app id \n\n───────────────────\n";
             const items = json.result.slice(0, 5);
 		 for (const item of items) {
   const { title, appId, url, developer, free, score } = item;
@@ -36,7 +36,7 @@ exports.run = {
          } else if (command == 'getplaystore') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your app id '), m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xvideosdown?url=${args[0]}&apikey=yahaa`)  
+            let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/apkdownloader?apikey=BrunoSobrino&package=${args[0]})  
             if (!json.message) return client.reply(m.chat, Func.jsonFormat(json), m)
             let teks = `乂  *N S F W*\n\n`
             teks += '	◦  *Name* : ' + json.result.apk_name + '\n'
