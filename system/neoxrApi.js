@@ -308,6 +308,15 @@ module.exports = class NeoxrApi {
       let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/pornhubsearch?query=${query}&apikey=yahaa`)
       return json
    }
+   modapk = async (query, no) => {
+      if (query && no) {
+         let json = await Func.fetchJson(this.baseUrl + '/apkmod?q=' + query + '&no=' + no + '&apikey=' + this.apiKey)
+         return json
+      } else if (query) {
+         let json = await Func.fetchJson(this.baseUrl + '/apkmod?q=' + query + '&apikey=' + this.apiKey)
+         return json
+      }
+   }
   }
 
 
