@@ -30,7 +30,7 @@ exports.run = {
          form.append('email', email.data[0])
          form.append('email_confirm', email.data[0])
          form.append('platform', 'ANDROID')
-         form.append('your_message', Hilang/Dicuri: Nonaktifkan akun saya ${number})
+         form.append('your_message', `Hilang/Dicuri: Nonaktifkan akun saya ${number}`)
          form.append('__user', '0')
          form.append('__a', '1')
          form.append('__csr', '')
