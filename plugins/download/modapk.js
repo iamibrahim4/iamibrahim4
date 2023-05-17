@@ -23,7 +23,7 @@ exports.run = {
         }\n🙈Mod : ${i.mod}\n🎵Url : ${
           i.url
         }\n\n──────────────\n\n`;
-            }
+            })
 			client.sendFile(m.chat, json.file.url, json.file.filename, '', m)
          } else if (command == 'getmodapk') {
             if (!text) return client.reply(m.chat, global.status.invalid, m)
