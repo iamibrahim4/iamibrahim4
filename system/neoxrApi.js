@@ -304,6 +304,10 @@ module.exports = class NeoxrApi {
       let json = await Func.fetchJson(`https://api.lolhuman.xyz/api/playstore?apikey=BrunoSobrino&query=${query}`)
       return json
      }
+     pppp = async (query) => {
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/pornhubsearch?query=${query}&apikey=yahaa`)
+      return json
+   }
   }
 
 
