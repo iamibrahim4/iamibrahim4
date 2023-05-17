@@ -30,7 +30,7 @@ exports.run = {
           url
         }\n\n──────────────\n\n`;
 	   }
-            
+           let thumb = await Func.fetchBuffer(`https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-google-play-google-logo-app-store-android-google-png-15.jpg`)
 	 
 		client.sendFile(m.chat, json.result.icon[0], '', textt, m)
          } else if (command == 'getplaystore') {
