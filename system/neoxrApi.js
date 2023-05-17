@@ -249,11 +249,11 @@ module.exports = class NeoxrApi {
       return json
    }
        adus = async (query) => {
-      let json = await Func.fetchJson(`https://api-fgmods.ddns.net/api/search/xnxxsearch?text=${query}&apikey=fg-dylux`)
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xnxx?query=${query}&apikey=yahaa`)
       return json
    }
     aaas = async (query) => {
-      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xvideossearch?query=${query}&apikey=tamvan`)
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/search/xvideossearch?query=${query}&apikey=yahaa`)
       return json
    }
     openi = async (query) => {
@@ -297,7 +297,7 @@ module.exports = class NeoxrApi {
       return json
    }
    chatbot = async (query) => {
-      let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/gpt3?text=${query}&apikey=tamvan`)
+      let json = await Func.fetchJson(`https://api.ibeng.tech/api/info/gpt3?text=${query}&apikey=yahaa`)
       return json
      }
   }
