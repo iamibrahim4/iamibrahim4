@@ -1,6 +1,6 @@
 exports.run = {
-   usage: ['xnxx'],
-   hidden: ['getxnxx'],
+   usage: ['xvideos'],
+   hidden: ['getxvideos'],
    use: 'query',
    category: 'downloader',
    async: async (m, {
@@ -11,12 +11,12 @@ exports.run = {
       command
     }) => {
       try {
-         if (command == 'xnxx') {
+         if (command == 'xvideos') {
            if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'step mom'), m)
             client.sendReact(m.chat, '🕒', m.key)
             let json = await Api.aaas (text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
-	  let textt = "*XNXX Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getxnxx your link\n\n───────────────────\n";
+	  let textt = "*xvideos Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getxvideosyour link\n\n───────────────────\n";
             const items = json.result.slice(0, 18);
 		 for (const item of items) {
   const { title, url, quality, duration } = item;
@@ -26,7 +26,7 @@ exports.run = {
           url
         }\n\n──────────────\n\n`;
 	   }
-     let thumb = await Func.fetchBuffer(`https://telegra.ph/file/4b8fa581714a1a2e70b0c.png`)       
+     let thumb = await Func.fetchBuffer(`https://logos-world.net/wp-content/uploads/2023/01/XVideos-Logo-500x281.png`)       
 	 
 		client.sendFile(m.chat, thumb, '', textt, m)
          } else if (command == 'getxvideos') {
