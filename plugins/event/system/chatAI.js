@@ -7,10 +7,9 @@ exports.run = {
    }) => {
       try { 
          if (body && !global.evaluate_chars.some(v => body.startsWith(v))) {
-            let json = await Api.chatbot(body)
+            const { result } = await Func.fetchJson(`https://sh.xznsenpai.xyz/api/openai?text=${body}`)
             if (!m.fromMe && setting.chatbot )
-               let text = json.data.data
-               m.reply(`${text}`)
+               m.reply(`${result}`)
          }
       } catch (e) {
          console.log(e)
