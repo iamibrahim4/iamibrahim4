@@ -24,7 +24,7 @@ exports.run = {
           views
         }\n👑Quality : ${quality}\n⌛️Duration : ${
           duration
-        }\⚡️Link : ${
+        }\n⚡️Link : ${
           link
         }\n\n──────────────\n\n`;
 	   }
