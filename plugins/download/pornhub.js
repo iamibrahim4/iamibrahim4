@@ -15,7 +15,7 @@ exports.run = {
             let json = await Api.pppp(text)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
 	  let textt = "*PORNHUB Search*\n\n Result From search  " + text + "\n\nTo download type " + isPrefix + " getxnxx your link\n\n───────────────────\n";
-            const items = json.result.slice(0, 18);
+            const items = json.result.slice(0, 15);
 		 for (const item of items) {
   const { title, duration, url, viewers, rating, published } = item;
 		 textt += `❤️Title : ${title}\n🙈Views : ${
