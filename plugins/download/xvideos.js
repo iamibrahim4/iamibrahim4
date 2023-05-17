@@ -22,7 +22,7 @@ exports.run = {
   const { title, url, quality, duration } = item;
 		 textt += `❤️Title : ${title}\n👑Quality : ${quality}\n⌛️Duration : ${
           duration
-        }\⚡️Link : ${
+        }\n⚡️Link : ${
           url
         }\n\n──────────────\n\n`;
 	   }
