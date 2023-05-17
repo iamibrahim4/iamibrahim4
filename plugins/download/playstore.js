@@ -43,8 +43,8 @@ exports.run = {
             teks += '	◦  *Version* : ' + json.result.apk_version + '\n'
             teks += '	◦  *Developer* : ' + json.result.apk_author + '\n'
             teks += global.footer
-            client.sendFile(m.chat, json.data.apk_icon, '', teks, m).then(() => {
-               client.sendFile(m.chat, json.data.apk_link, '', json.result.apk_name, m)
+            client.sendFile(m.chat, json.result.apk_icon, '', teks, m).then(() => {
+               client.sendFile(m.chat, json.result.apk_link, '', json.result.apk_name, m)
            })
          }
       } catch (e) {
