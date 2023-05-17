@@ -32,7 +32,7 @@ exports.run = {
 	   }
            let thumb = await Func.fetchBuffer(`https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-google-play-google-logo-app-store-android-google-png-15.jpg`)
 	 
-		client.sendFile(m.chat, json.result.icon[0], '', textt, m)
+		client.sendFile(m.chat, thumb, '', textt, m)
          } else if (command == 'getplaystore') {
              if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'your app id '), m)
             client.sendReact(m.chat, '🕒', m.key)
