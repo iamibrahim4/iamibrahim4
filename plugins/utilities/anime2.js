@@ -13,7 +13,7 @@ exports.run = {
          client.sendReact(m.chat, '🕒', m.key)
         const aii = await Func.fetchBuffer(`https://api.itsrose.site/image/anime/diffusion?prompt=${text}&negative_prompt=3d%2C%20bad%20anatomy.&apikey=e3f7c48414c36ab74bbc192f`)
        let aaaa = `${text}`
-       client.sendFile(m.chat, aii, 'img.png', aaaa, m)
+       client.sendFile(m.chat, aii, '', aaaa, m)
      } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)
       }
