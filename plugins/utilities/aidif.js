@@ -1,5 +1,5 @@
 exports.run = {
-  usage: ['animedif'],
+  usage: ['aidif'],
   use: 'query',
   category: 'ai',
  async: async (m, {
