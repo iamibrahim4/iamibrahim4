@@ -14,7 +14,7 @@ exports.run = {
         let json = await Func.fetchJson(`https://api.itsrose.site/image/diffusion/txt2img?prompt=${text}&negative_prompt=%20bad%20anatomy%2C%20lowres%2C%20extra%20hands%2C%20extra%20legs%2C%20extra%20finger&width=512&height=512&steps=40&model_id=dream_shaper&sampler=UniPC&cfg=7.5&enhance_prompt=yes&multi_lingual=no&image_num=1&safety_checker=no&panorama=no&hiresFix=no&apikey=e3f7c48414c36ab74bbc192f`)
         for (const [index, url] of json.result["images"].entries()) {
 				setTimeout(async () => {
-					client.sendFile(m.chat,(index === json.result["images"].length - 1), '', '', m)
+					client.sendFile(m.chat,(index === json.result["images"].length - 1), '', 'image.png', m)
 						})
 		}
         } catch (e) {
