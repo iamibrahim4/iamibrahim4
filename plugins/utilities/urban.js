@@ -14,7 +14,7 @@ exports.run = {
         client.sendReact(m.chat, '🕒', m.key)
         let json = await Api.urban(text)
         if (!json.status) return client.reply(m.chat, global.status.fail, m)
-        m.reply(`${json.data.content}\n\n${json.data.author}`)
+        m.reply(`Meaning/Defination\n\n${json.data.content}\n\nAurthor\n\n${json.data.author}`)
         } catch (e) {
      return client.reply(m.chat, Func.texted('bold', `Can you tell me in deatil`), m)
   }
