@@ -20,7 +20,7 @@ exports.run = {
 		} else {
 	    for (const [index, url] of result["images"].entries()) {
 				setTimeout(async () => {
-					client.sendFile(m.chat,(index === result["images"].length - 1), 'image.png', '', m)
+					client.sendFile(m.chat,(index === result["images"].length - 1), '', '${text}', m)
 						})
 		} 
 		}
