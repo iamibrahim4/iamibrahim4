@@ -15,8 +15,8 @@ exports.run = {
         for (const [index, url] of json.result["images"].entries()) {
 				setTimeout(async () => {
 					client.sendFile(m.chat,(index === json.result["images"].length - 1), '', '', m)
-						}
-		})
+						})
+		}
         } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)
       }
