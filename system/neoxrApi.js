@@ -309,8 +309,7 @@ module.exports = class NeoxrApi {
       return json
    }
    urban = async (query, no) => {
-      if (query && no) {
-         let json = await Func.fetchJson(this.baseUrl + '/urban?q=' + query + '&apikey=' + this.apiKey)
+     let json = await Func.fetchJson(this.baseUrl + '/urban?q=' + query + '&apikey=' + this.apiKey)
          return json
    }
   }
