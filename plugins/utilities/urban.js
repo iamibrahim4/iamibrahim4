@@ -1,5 +1,5 @@
 exports.run = {
-    usage: ['Dictionary'],
+    usage: ['dictionary'],
     use: 'query',
     category: 'information',
     async: async (m, {
