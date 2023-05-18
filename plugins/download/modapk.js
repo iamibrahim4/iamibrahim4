@@ -14,22 +14,22 @@ exports.run = {
          if (command == 'modapk') {
             if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'fb lite'), m)
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Api.modapk(text)
+           let json = await Func.fetchJson(`https://api.neoxr.my.id/api/apkmod?q=${text}&apikey=ibrahim9`)
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
           let textt = "*Mod of app*  " + text + "\n\nTwo dwonload type " + isPrefix + " getmodapk ${text} number of app below \n\n───────────────────\n";
           json.data.map(async (v, i) =>  {
-                textt += `⚡ No : ${v.no}\n ❤Name : ${i.name}\n♫ Version : ${
-          i.version
-        }\n🙈Mod : ${i.mod}\n🎵Url : ${
-          i.url
+                textt += `⚡ No : ${v.no}\n ❤Name : ${v.name}\n♫ Version : ${
+          v.version
+        }\n🙈Mod : ${v.mod}\n🎵Url : ${
+          v.url
         }\n\n──────────────\n\n`;
             })
-	m.reply(`${textt}`)
+	m.reply(textt)
          } else if (command == 'getmodapk') {
             if (!text) return client.reply(m.chat, global.status.invalid, m)
             let [query, no] = text.split`—`
             client.sendReact(m.chat, '🕒', m.key)
-            let json = await Api.modapk(query, no)  
+            let json = await Func.fetchJson(`https://api.neoxr.my.id/api/apkmod?q=${query}&no=${no}&apikey=ibrahim9`)
             let teks = `乂  *P L A Y S T O R E*\n\n`
             teks += '	◦  *Name* : ' + json.data.name + '\n'
             teks += '	◦  *Version* : ' + json.data.version + '\n'
