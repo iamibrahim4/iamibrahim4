@@ -18,9 +18,9 @@ exports.run = {
 	    if (!status) {
 			m.reply(message);
 		} else {
-	    for (const [index, url] of json.result["images"].entries()) {
+	    for (const [index, url] of result["images"].entries()) {
 				setTimeout(async () => {
-					client.sendFile(m.chat,(index === json.result["images"].length - 1), 'image.png', '', m)
+					client.sendFile(m.chat,(index === result["images"].length - 1), 'image.png', '', m)
 						})
 		} 
 		}
